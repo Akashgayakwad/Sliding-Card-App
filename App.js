@@ -1,4 +1,5 @@
 import React from 'react';
+import {Card, Button} from 'react-native-elements';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 import Deck from './src/Deck';
@@ -16,10 +17,29 @@ const DATA = [
 
 
 export default class App extends React.Component {
+
+  renderCard(item){
+    return(
+      <Card
+        key={item.id}
+        title={item.text}
+        image={{uri:item.uri}}
+      >
+      <Text style={{ marginBottom: 10 }}>
+          I can customize the card further.
+      </Text>
+      <Button icon={{name: 'code'}}
+              backgroundColor="#03A9F4"
+              title="View Now!"
+      />
+      </Card>
+    );
+
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Deck/>
+        <Deck data={DATA} renderCard={this.renderCard}/>
       </View>
     );
   }
