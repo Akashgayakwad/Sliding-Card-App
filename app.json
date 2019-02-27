@@ -1,12 +1,16 @@
 {
   "expo": {
-    "name": "First App",
-    "slug": "firstApp",
+    "name": "Card Swiper",
+    "slug": "Card Swiper",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
-      "ios",
-      "android"
+      "ios":{
+        "bundleIdentifier": "com.fakecompany.CardSwiper"
+      },
+      "android":{
+        "package": "com.fakecompany.CardSwiper"
+      }
     ],
     "version": "1.0.0",
     "orientation": "portrait",
